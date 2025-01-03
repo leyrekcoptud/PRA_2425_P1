@@ -106,7 +106,7 @@ class ListArray : public List<T> {
     		}
 
     		bool empty() override {
-			return n = 0;
+			return n == 0;
     		}
 
 		int size() override {
@@ -115,4 +115,3 @@ class ListArray : public List<T> {
 
 };
 
-	
