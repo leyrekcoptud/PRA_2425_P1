@@ -40,3 +40,11 @@ bin/testRectangle: testRectangle.cpp Rectangle.o Shape.o Point2D.o
 	mkdir -p bin
 	g++ -o bin/testRectangle testRectangle.o Rectangle.o Shape.o Point2D.o
 
+Square.o: Square.h Square.cpp
+	g++ -c Square.cpp
+
+bin/testSquare: testSquare.cpp Square.o Shape.o Point2D.o Rectangle.o
+	g++ -c testSquare.cpp
+	mkdir -p bin
+	g++ -o bin/testSquare testSquare.o Square.o Shape.o Point2D.o Rectangle.o
+
