@@ -29,7 +29,7 @@ void Circle::set_radius(double r) {
 
 // Implementación del método print() de Shape
 void Circle::print() {
-    std::cout << "Circle: color = " << color << ", center = " << center << ", radius = " << radius << std::endl;
+    std::cout << "[" << "Circle: color = " << color << ", center = " << center << ", radius = " << radius << "]" << std::endl;
 }
 
 // Implementación del método area() de Shape
@@ -50,7 +50,7 @@ void Circle::translate(double incX, double incY) {
 
 // Sobrecarga del operador <<
 std::ostream& operator<<(std::ostream& out, const Circle& c) {
-    out << "Circle: color = " << c.color << ", center = " << c.center << ", radius = " << c.radius;
+    out << "["  << "Circle: color = " << c.color << ", center = " << c.center << ", radius = " << c.radius << "]";
     return out;
 }
 
