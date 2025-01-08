@@ -14,7 +14,7 @@ private:
 
     Node<T>* getNode(int pos) const {
         if (pos < 0 || pos >= n) {
-            throw std::out_of_range("Posición inválida");
+            throw std::out_of_range("Posición inválida!");
         }
         Node<T>* current = first;
         for (int i = 0; i < pos; ++i) {
@@ -37,7 +37,7 @@ public:
 
     void insert(int pos, T e) override {
         if (pos < 0 || pos > n) {
-            throw std::out_of_range("Posición inválida");
+            throw std::out_of_range("Posición inválida!");
         }
         Node<T>* newNode = new Node<T>(e);
         if (pos == 0) {
@@ -61,7 +61,7 @@ public:
 
     T remove(int pos) override {
         if (pos < 0 || pos >= n) {
-            throw std::out_of_range("Posición inválida");
+            throw std::out_of_range("Posición inválida!");
         }
         Node<T>* target;
         if (pos == 0) {
@@ -106,12 +106,14 @@ public:
         return get(pos);
     }
 
-    friend std::ostream& operator<<(std::ostream& out, const ListLinked<T>& list) {
-        Node<T>* current = list.first;
+    friend std::ostream& operator<<(std::ostream& out, const ListLinked<T> &list) {
+        out << "List => [";
+	Node<T>* current = list.first;
         while (current != nullptr) {
             out << current->data << " ";
             current = current->next;
         }
+	out << "]";
         return out;
     }
 };
