@@ -10,34 +10,22 @@ class Shape {
 
 	public:
     		// Constructor por defecto, crea una figura de color rojo
-    		Shape() : color("red") {}
+    		Shape(); 
 
     		// Constructor que crea una figura del color especificado
-    		Shape(std::string color) {
-        		if (color != "red" && color != "green" && color != "blue") {
-            			throw std::invalid_argument("Color inválido");
-        		}
-        		this->color = color;
-    		}
-
+    		Shape(std::string color);
+    	
     		// Devuelve el color de relleno de la figura
-    		std::string get_color() const {
-        		return color;
-    		}
+    		std::string get_color() const;
 
     		// Modifica el color del relleno de la figura
-    		void set_color(std::string c) {
-        		if (c != "red" && c != "green" && c != "blue") {
-            			throw std::invalid_argument("Color inválido");
-        		}
-        		color = c;
-    		}
+    		void set_color(std::string c); 
 
     		// Métodos virtuales puros
     		virtual double area() const = 0;
     		virtual double perimeter() const = 0;
     		virtual void translate(double incX, double incY) = 0;
-    		virtual void print() = 0;
+    		virtual void print() const = 0;
 };
 
 #endif // SHAPE_H
