@@ -28,7 +28,7 @@ public:
 
     // Métodos consultores y modificadores
     Point2D get_vertex(int ind) const;
-    void set_vertices(Point2D* vertices);
+    virtual void set_vertices(Point2D* vertices);
     Point2D operator[](int ind) const;
 
     // Sobrecarga del operador de asignación
